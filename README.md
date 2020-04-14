@@ -9,7 +9,9 @@ IDE Auto Downloader
 
 - What for? : Download main IDEs that i'm using automatically
 
-- Supporting IDE(I'm going to support various IDEs. Comment at issue when there is IDE you want to download with this.) : Python 3.7.6, Sublime Text3, Visual Studio Code
+- Supporting IDE : Python 3.7.6, Sublime Text3, Visual Studio Code
+
+- I'm going to support various IDEs. Comment at issue when there is IDE you want to download with this.
 
 - exe file link : https://drive.google.com/open?id=16bwTQOdFO8KfHlXYDni5J-TlgL56Kf7w
 ***
