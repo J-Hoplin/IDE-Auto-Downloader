@@ -2,6 +2,7 @@ IDE Auto Downloader
 ===
 ***
 **Do not use this code Commercially**
+**소스코드를 사용하시되 출처를 밝히고 사용해주세요**
 
 - Language : Python3
 
