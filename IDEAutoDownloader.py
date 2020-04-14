@@ -21,7 +21,7 @@ def Downloader(directoryName,IDEName,url):
         fp = requests.get(URL)
         z = zipfile.ZipFile(BytesIO(fp.content))
         z.extractall(mkDirectory)
-        print("Complete to download " + IDEName + ". Go back to menu")
+        print("Complete to download " + IDEName + ".")
         time.sleep(3)
     except FileExistsError as e:
         print("File name \'" + directoryName + "\' already exist. Please check again.")
