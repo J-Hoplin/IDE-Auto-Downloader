@@ -7,13 +7,15 @@ import requests
 import platform
 import os
 import sys
-from SublimeDownloader import downloadSublimeText3
-from VSCodeDownloader import downloadVisualStudioCode
-from Python37Downloader import downloadPython37
+from .SublimeDownloader import downloadSublimeText3
+from .VSCodeDownloader import downloadVisualStudioCode
+from .Python37Downloader import downloadPython37
+from .PhantomJSDownloader import downloadPhantomJS
 
 dST = downloadSublimeText3()
 dVSC = downloadVisualStudioCode()
 dPY3 = downloadPython37()
+dPJS = downloadPhantomJS()
 
 outerLoop = True
 
@@ -25,7 +27,8 @@ platformChecker = platform.architecture()
 supportingIDEs = {
     1 : ['Sublime Text3',dST],
     2 : ['Visual Studio Code',dVSC],
-    3 : ['Python 3.7.6',dPY3]
+    3 : ['Python 3.7.6',dPY3],
+    4 : ['Phantom JS',dPJS]
 }
 
 while outerLoop:
