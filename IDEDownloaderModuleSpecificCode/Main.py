@@ -7,10 +7,10 @@ import requests
 import platform
 import os
 import sys
-from .SublimeDownloader import downloadSublimeText3
-from .VSCodeDownloader import downloadVisualStudioCode
-from .Python37Downloader import downloadPython37
-from .PhantomJSDownloader import downloadPhantomJS
+from SublimeDownloader import downloadSublimeText3
+from VSCodeDownloader import downloadVisualStudioCode
+from Python37Downloader import downloadPython37
+from PhantomJSDownloader import downloadPhantomJS
 
 dST = downloadSublimeText3()
 dVSC = downloadVisualStudioCode()
