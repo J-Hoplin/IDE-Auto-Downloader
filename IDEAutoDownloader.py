@@ -29,9 +29,13 @@ def Downloader(directoryName,IDEName,url):
         time.sleep(3)
 
 class downloadPython37:
-    IDEName = 'Python 3.7.6'
-    directoryName = 'Python376'
-
+    IDEName = ''
+    directoryName = ''
+    
+    def __init__(self,IDEName,directoryName):
+        self.IDEName = IDEName
+        self.directoryName = directoryName
+    
     def download32bit(self):
         url32bit = 'https://www.python.org/ftp/python/3.7.6/python-3.7.6-embed-win32.zip'
         Downloader(self.directoryName,self.IDEName,url32bit)
@@ -40,8 +44,13 @@ class downloadPython37:
         Downloader(self.directoryName,self.IDEName,url64bit)
 
 class downloadVisualStudioCode:
-    IDEName = 'Visual Studio Code'
-    directoryName = 'Visual Studio Code'
+    IDEName = ''
+    directoryName = ''
+    
+    def __init__(self,IDEName,directoryName):
+        self.IDEName = IDEName
+        self.directoryName = directoryName
+    
     def download32bit(self):
         url32bit = 'https://go.microsoft.com/fwlink/?LinkID=623231'
         Downloader(self.directoryName,self.IDEName,url32bit)
@@ -50,19 +59,18 @@ class downloadVisualStudioCode:
         Downloader(self.directoryName,self.IDEName,url64bit)
 
 class downloadSublimeText3:
-    IDEName = 'Sublime Text3'
-    directoryName = 'Sublime Text3'
+    IDEName = ''
+    directoryName = ''
+    def __init__(self,IDEName,directoryName):
+        self.IDEName = IDEName
+        self.directoryName = directoryName
+    
     def download32bit(self):
         url32bit = 'https://download.sublimetext.com/Sublime Text Build 3211.zip'
         Downloader(self.directoryName,self.IDEName,url32bit)
     def download64bit(self):
         url64bit = 'https://download.sublimetext.com/Sublime Text Build 3211 x64.zip'
         Downloader(self.directoryName,self.IDEName,url64bit)
-
-dST = downloadSublimeText3()
-dVSC = downloadVisualStudioCode()
-dPY3 = downloadPython37()
-
 outerLoop = True
 
 
@@ -71,10 +79,14 @@ platformChecker = platform.architecture()
 #(bit,OS)
 
 supportingIDEs = {
-    1 : ['Sublime Text3',dST],
-    2 : ['Visual Studio Code',dVSC],
-    3 : ['Python 3.7.6',dPY3]
+    1 : ['Sublime Text3',dST,'Sublime_Text3'],
+    2 : ['Visual Studio Code',dVSC,'Visual_Studio_Code'],
+    3 : ['Python 3.7.6',dPY3,'Python376']
 }
+
+dST = downloadSublimeText3(supportingIDEs[1][0],supportingIDEs[1][2])
+dVSC = downloadVisualStudioCode(supportingIDEs[2][0],supportingIDEs[2][2])
+dPY3 = downloadPython37(supportingIDEs[3][0],supportingIDEs[3][2])
 
 while outerLoop:
     os.system('cls')
